@@ -13,17 +13,15 @@ public:
 	Soldier(int color, char type);
 	~Soldier() = default;
 
-	void setBoard(string command);//Board* board);
 	virtual int move(string mov) = 0;
+	virtual int checkMove(int lineBase, int columnBase, int lineTarget, int columnTarget) = 0;
 
 	char getType();
 	int getColor();
+	static Board* _board;
 
 protected:
 	char _type;
-	int _color;
-
-private:
-	static Board* _board;
+	int _color;	
 
 };
